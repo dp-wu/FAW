@@ -1,4 +1,4 @@
-psycopg2==2.7.2
+psycopg2
 whitenoise
 Django
 gunicorn
