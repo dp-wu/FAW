@@ -11,7 +11,7 @@
             key. since we didnt specify a primary key in our Post model,
             django creates one for us and adds it as a field named pk to
             each of our posts. we access the pk by writing post.pk-->
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
             <p>{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
