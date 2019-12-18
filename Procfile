@@ -1,1 +1,1 @@
-web: gunicorn FAW.wsgi --log-file -
+web: gunicorn --log-file=- FAW.wsgi:application
