@@ -5,6 +5,16 @@ from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
 
+# create home page view
+def home(request):
+    return render(request, 'blog/home.html')
+
+
+# create about page view
+def about(request):
+    return render(request, 'blog/about.html')
+
+
 # Create your views here.
 def post_list(request):
     posts = Post.objects.filter(published_date__lt=timezone.now()).order_by(

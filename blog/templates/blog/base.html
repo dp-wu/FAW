@@ -1,6 +1,10 @@
+<!DOCTYPE html>
 {% load static %}
-<html>
+
+
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>FAW</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -9,7 +13,7 @@
     </head>
 
     <body>
-        <div class="page-header">
+        <header class="page-header">
             {% if user.is_authenticated %}
                 <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
                 <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
@@ -18,7 +22,14 @@
                 <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
             <h1><a href="/">Full Axx Work</a></h1>
-        </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'post_list' %}">Blog</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                </ul>
+            </nav>
+        </header>
 
         <div class="content container">
             <div class="row">
@@ -28,5 +39,9 @@
                 </div>
             </div>
         </div>
+
+        <footer>
+            &copy; 2019 FAW
+        </footer>
     </body>
 </html>
